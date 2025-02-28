@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}{{ topic.name }}{% endblock %}
+
+{% block content %}
+<div class="topic-detail-container">
+  <h1 class="topic-title">{{ topic.name }}</h1>
+  {% if topic.short_description %}
+    <p class="topic-description">{{ topic.short_description }}</p>
+  {% else %}
+    <p class="topic-description">No description available for this topic.</p>
+  {% endif %}
+
+  <section id="resources" class="resources-section">
+    <h2 class="section-title">Resources</h2>
+    {% regroup topic.resource_set.all|dictsort:"difficulty" by difficulty as resource_groups %}
+    {% for group in resource_groups %}
+      <h3 class="difficulty-title">{{ group.grouper|lower|title }}</h3>
+      {% if group.list %}
+        <ul class="resource-list">
+          {% for resource in group.list %}
+            <li class="resource-item">
+              <a href="{{ resource.url }}" class="resource-link">{{ resource.name }}</a>
+              {% if resource.description %}
+                – <span class="resource-description">{{ resource.description }}</span>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="no-resources">No resources available for {{ group.grouper|lower|title }} difficulty.</p>
+      {% endif %}
+    {% endfor %}
+  </section>
+
+  <section id="problems" class="problems-section">
+    <h2 class="section-title">Problems</h2>
+    {% regroup topic.problem_set.all|dictsort:"difficulty" by difficulty as problem_groups %}
+    {% for group in problem_groups %}
+      <h3 class="difficulty-title">{{ group.grouper|lower|title }}</h3>
+      {% if group.list %}
+        <ul class="problem-list">
+          {% for problem in group.list %}
+            <li class="problem-item">
+              <a href="{{ problem.url }}" class="problem-link">{{ problem.name }}</a>
+              {% if problem.description %}
+                – <span class="problem-description">{{ problem.description }}</span>
+              {% endif %}
+              <br>
+              <a href="{% url 'solution' problem.pk %}" class="solution-link">Solution</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="no-problems">No problems available for {{ group.grouper|lower|title }} difficulty.</p>
+      {% endif %}
+    {% endfor %}
+  </section>
+</div>
+{% endblock %}

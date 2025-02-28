@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Topic List{% endblock %}
+
+{% block content %}
+<div class="topic-list-container">
+  <h1>Topic List</h1>
+  {% if topics %}
+    <ul class="topic-list">
+      {% for topic in topics %}
+        <li class="topic-item">
+          <a href="{% url 'topic-detail' topic.pk %}" class="topic-link">
+            <h2 class="topic-name">{{ topic.name }}</h2>
+          </a>
+          {% if topic.short_description %}
+            <p class="topic-description">{{ topic.short_description }}</p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="no-topics">No topics available.</p>
+  {% endif %}
+</div>
+{% endblock %}

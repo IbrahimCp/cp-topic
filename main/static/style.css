@@ -1,0 +1,243 @@
+/* Make sure html and body take up the full height */
+/* Ensure full height for html and body */
+/* Ensure html and body take up the full height */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Set up the body as a flex container in column direction */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Let the main content area grow to fill available space */
+main {
+    flex: 1;
+}
+
+
+
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header (Top Bar) */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main content area */
+main {
+    padding: 20px;
+    background-color: #fff;
+    min-height: 400px; /* Adjust as needed */
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Footer (Bottom Bar) */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+/* Utility classes (optional) */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section#contact ul {
+    padding-left: 1.5em; /* Increase or decrease the value as needed */
+}
+
+/* Container for the topic list */
+.topic-list-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Main title styling */
+.topic-list-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Unordered list styling */
+.topic-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Each topic item styling */
+.topic-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Hover effect for topic item */
+.topic-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Topic link styling */
+.topic-link {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+/* Topic name styling */
+.topic-name {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #007BFF;
+}
+
+/* Topic description styling */
+.topic-description {
+    margin-top: 10px;
+    color: #666;
+    font-size: 1rem;
+}
+
+/* No topics message styling */
+.no-topics {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #999;
+}
+/* Container for the topic detail page */
+.topic-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Topic Title */
+.topic-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Topic Description */
+.topic-description {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 1.5rem;
+    margin: 20px 0 10px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Difficulty Titles */
+.difficulty-title {
+    font-size: 1.3rem;
+    margin: 15px 0 5px;
+    color: #007BFF;
+}
+
+/* Lists styling */
+.resource-list,
+.problem-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Individual Resource/Problem Items */
+.resource-item,
+.problem-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.resource-item:hover,
+.problem-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Links */
+.resource-link,
+.problem-link,
+.solution-link {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.resource-link:hover,
+.problem-link:hover,
+.solution-link:hover {
+    text-decoration: underline;
+}
+
+/* No items message */
+.no-resources,
+.no-problems {
+    color: #999;
+    font-style: italic;
+    margin: 10px 0;
+}
+.topic-detail-container {
+    max-height: 80vh;  /* Sets the maximum height to 80% of the viewport height */
+    overflow-y: auto;  /* Enables vertical scrolling if content exceeds max-height */
+}
+

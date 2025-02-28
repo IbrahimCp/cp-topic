@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}{{ codesnippet.name }}{% endblock %}
+
+{% block content %}
+  <h1>{{ codesnippet.name }} ({{ codesnippet.get_language_display }})</h1>
+
+  <h2>Code</h2>
+  <div style="max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background-color: #f8f8f8;">
+    <pre style="margin: 0;"><code class="language-{{ codesnippet.language|lower }}">{{ codesnippet.code|escape }}</code></pre>
+
+  </div>
+{% endblock %}

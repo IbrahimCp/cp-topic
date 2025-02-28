@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}CP Topic{% endblock %}
+
+{% block content %}
+<h1>Welcome to CP Topic!</h1>
+<p>
+  CP Topic is a site featuring a curated collection of essential topics in competitive programming and beyond.
+  To get started, visit our <a href="{% url 'topic' %}">topic list</a> to explore subjects that interest you.
+  This site was created by competitive programming enthusiasts. If you'd like to contribute, please
+  <a href="{% url 'contact' %}">click here</a> for more details.
+</p>
+{% endblock %}
