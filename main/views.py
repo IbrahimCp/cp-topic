@@ -13,8 +13,8 @@ def topic_list(request):
 
 def topic_detail(request, pk):
     topic = get_object_or_404(Topic, pk=pk)
-    resources = Resource.objects.filter(topic=topic)
     problems = Problem.objects.filter(topic=topic)
+    resources = Resource.objects.filter(topic=topic)
     return render(request, "topic_detail.html", {"topic": topic,
                                                  "resources": resources,
                                                  "problems": problems})
@@ -27,4 +27,3 @@ def contact(request):
 def solution(request, pk):
     sol = get_object_or_404(CodeSnippet, problem=Problem.objects.get(pk=pk))
     return render(request, 'solution_page.html', {"codesnippet": sol})
-
